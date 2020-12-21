@@ -6,7 +6,7 @@
 
 
 |   Component Paper   | Conference  |  Code | Abstract |
-|  :---------  | :------:  | :------: | :------: | :------: |
+|  :---------  | :------:  | :------: | :------: |
 | [Stacked Denoising Autoencoders: Learning Useful Representations in a Deep Network with a Local Denoising Criterion](https://jmlr.csail.mit.edu/papers/volume11/vincent10a/vincent10a.pdf) | JMLR 2010 |  |
 
 
