@@ -17,7 +17,7 @@
 | [Contrastive Clustering](https://arxiv.org/pdf/2009.09687.pdf) | CC | AAAI 2021 | [PyTorch](https://github.com/Yunfan-Li/Contrastive-Clustering) | CIFAR10: 0.790 | 一种端到端算法，主要思想是样本层面和簇层面的对比学习。通过数据增强构造正样本对和负样本对。特征矩阵的行可以看做样本的软分配，而列可以看做簇的嵌入表示，以此分别在行空间和列空间做对比学习，同时优化两者的loss。 |
 | [SCAN: Learning to Classify Images without Labels](https://arxiv.org/abs/2005.12320) | SCAN | ECCV2020 | [Pytrorch](https://github.com/wvangansbeke/Unsupervised-Classification) | CIFAR10: 0.883 |  two-step: 表征学习和聚类。  表征学习阶段，选择一种pretext任务(SimCLR)，通过自监督学习的方式来学习样本嵌入。 之后，为每个样本选取K个相邻样本。 聚类阶段，输出为样本的软分配。首先通过SCAN-loss优化网络，接着迭代选取高置信度样本，分配伪标签，通过cross-entropy loss训练网络。SCAN-loss分两部分，第一部分使得样本和它的邻居样本之间的距离最小，第二部分为熵约束。 |
 |[Improving Unsupervised Image Clustering With Robust Learning](https://arxiv.org/pdf/2012.11150.pdf)|RUC|Arxiv 2020|[Pytorch](https://github.com/deu30303/RUC)|  |  |
-|[MiCE: Mixture of Contrastive Experts for Unsupervised Image Clustering ](https://openreview.net/pdf?id=gV3wdEOGy_V)|MiCE|ICLR2021|  |  |
+|[MiCE: Mixture of Contrastive Experts for Unsupervised Image Clustering ](https://openreview.net/pdf?id=gV3wdEOGy_V)|MiCE|ICLR2021| [Pytorch](https://github.com/TsungWeiTsai/MiCE) | CIFAR10: 0.835 | 框架比较特殊。受MoE的启发，MiCE使用了分治的思想,通过K个experts来预测样本的分配。每个expert有自己的“知识”，对样本分配提出自己的预测，而一个样本对每个expert的信任程度也是不一样的。还有一个特殊的地方为：MiCE的主体网络将一张图片(1 x image_size)映射到 K x d 的空间中，再将每个 1 x d 的embedding分别输入到对应的expert中。实际上，如果将expert看做网络的一部分，MiCE其实也是使用了K个不同的网络来预测分配，不同的地方在于网络的前一部分的参数是共享的，且expert预测的分配也有权重。 |
 
 
 
